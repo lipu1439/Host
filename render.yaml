@@ -1,5 +1,5 @@
 services:
-  - name: telegram-bot-host
+  - name: host
     type: web
     env: python
     build:

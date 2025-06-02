@@ -1,0 +1,20 @@
+services:
+  - name: telegram-bot-host
+    type: web
+    env: python
+    build:
+      pip install -r requirements.txt
+    start: python host_lipu.py
+    envVars:
+      - key: TOKEN
+        value: your-telegram-bot-token
+      - key: OWNER_ID
+        value: your-telegram-user-id
+      - key: ADMIN_ID
+        value: your-admin-user-id
+      - key: YOUR_USERNAME
+        value: your-telegram-username
+      - key: UPDATE_CHANNEL
+        value: your-telegram-channel-link
+    plan: free
+    healthCheckPath: /
